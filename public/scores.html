@@ -9,7 +9,7 @@
   <!-- general settings -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Book Recommendation</title>
+  <title>Model Scores</title>
 
   <!-- import css -->
   <link href="./css/styles.css" rel="stylesheet" />
@@ -62,47 +62,28 @@
     </nav>
 
     <!-- page content-->
-    <div class="main_recommendation">
-      <h2 class="header1">
-        Which one of the books below would you recommend to someone who likes the first book?
-      </h2>
-      <!-- main book -->
-      <div id="main_book_div">
-        <img id="main_book" src="images/load.svg">
-        <div id="main_text">
-          <p id="title_main"><b>Main Title</b></p>
-          <p id="author_main">Main Author</p>
-        </div>
-      </div>
-      <!-- recommendations -->
-      <form class="books">
-        <div id="book_0_div" class="book_divs">
-          <button class="recommendation" id="book_0" onclick="add_label_path_0();" type="button"><img id="image_book_0"
-              src="images/load.svg"></button>
-          <p id="title_0"><b>Title 1</b></p>
-          <p id="author_0">Author 1</p>
-        </div>
-        <div id="book_1_div" class="book_divs">
-          <button class="recommendation" id="book_1" onclick="add_label_path_1();" type="button"><img id="image_book_1"
-              src="images/load.svg"></button>
-          <p id="title_1"><b>Title 2</b></p>
-          <p id="author_0">Author 2</p>
-        </div>
-        <div id="book_2_div" class="book_divs">
-          <button class="recommendation" id="book_2" onclick="add_label_path_2();" type="button"><img id="image_book_2"
-              src="images/load.svg"></button>
-          <p id="title_2"><b>Title 3</b></p>
-          <p id="author_0">Author 3</p>
-        </div>
-        <span id="alias-submit">
-          <input class="form btn" id="alias" placeholder="Your Name or alias" type="text">
-          <button id="send" class="btn" onclick="send_data();" type="button">Submit</button>
-        </span>
-      </form>
-    </div>
+    <div class="main-scores">
+        <h2 class="header1">
+            Model Scores
+        </h2>
 
-    <!-- Explanation text -->
-    <p id="explanation_recommendation">How to use: </br> XXX </p>
+        <table id="table_score">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Group Name</th>
+                    <th>Model Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="tr">
+                    <td id="group-name"></td>
+                    <td id="model-score"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button href="#" class="btn" id="btn7" onClick="download_table_as_csv('table_score')">Download CSV</button>
+    </div>
 
     <!-- footer -->
     <footer class="footer">

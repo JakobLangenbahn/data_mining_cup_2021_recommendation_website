@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- html head -->
+
+<head>
+
+    <!-- general settings -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highscores</title>
+
+    <!-- import css -->
+    <link href="./css/styles.css" rel="stylesheet" />
+
+    <!-- import fontawesome -->
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/644da155ca.js"></script>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.4.3/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.4.3/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.4.3/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.4.3/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.4.3/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.4.3/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.4.3/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.4.3/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.4.3/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.4.3/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+</head>
+
+<!-- html body -->
+
+<body>
+
+    <div class="overall-page">
+
+        <!-- navbar -->
+        <nav class="nav" id="nav">
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html" id="index-link">Book Recommendation</a>
+                </li>
+                <li>
+                    <a href="scores.html" id="scores-link">Model Scores</a>
+                </li>
+                <li>
+                    <a href="highscores.html" id="highscores-link">Highscores</a>
+                </li>
+                <li>
+                    <a href="aboutUs.html" id="about-page-link">About</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- page content-->
+        <div class="main-highscores">
+            <h2 class="header1">
+                Highscores
+            </h2>
+    
+            <table id="table_highscore">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Alias</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="tr">
+                        <td id="alias"></td>
+                        <td id="score"></td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <button href="#" class="btn" id="btn6" onClick="download_table_as_csv('table_highscore')">Download CSV</button>
+        </div>
+
+        <!-- footer -->
+        <footer class="footer">
+            <!-- Legal Links -->
+            <a class="legal-links" href="Legal-Disclosure.html" id="legaldisclosure">Legal Disclosure</a>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
