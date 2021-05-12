@@ -1,0 +1,353 @@
+/* =======================================================
+============================================================== 
+General Info:
+- Each page is built using a Grid containing "Navbar", "Main", "Footer"
+- "Navbar" and "Footer" are styled once and are the same for all pages
+- The "Main" part is styled individually for each page using nested Grids
+- Each page is styled for a width smaller and larger than 800px (mobile and desktop)
+==============================================================
+======================================================= */
+
+/*
+==============================================================
+Fonts
+==============================================================
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+/* @import url('https://css.gg/css'); */
+
+/*
+==============================================================
+Variables
+==============================================================
+*/
+
+:root {
+  /* dark main color*/
+  --clr-primary-1: #0d0630;
+  /* lighter shade of main color */
+  --clr-primary-1-light: #271291;
+  /* light green/ background */
+  --clr-primary-2: #cfefd8;
+  /* middle green */
+  --clr-primary-3: #93e5ab;
+  /* dark green */
+  --clr-primary-4: #8bbeb2;
+  /* red */
+  --clr-primary-5: #c97064;
+  /* yellow */
+  --clr-primary-6: #e6f9af;
+  /* white */
+  --clr-white: #fff;
+  /* light grey */
+  --clr-lightgrey: #f5f5f5;
+  /* other variables */
+  --ff-primary: "Sukhumvit Set", sans-serif;
+  --transition: all 0.3s linear;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1920px;
+}
+
+/*
+==============================================================
+Global Styles
+==============================================================
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-primary);
+  background: var(--clr-white);
+  color: var(--clr-primary-1);
+  font-size: 1rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h4 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.btn {
+  color: var(--clr-primary-1);
+  margin: 0.5rem;
+  letter-spacing: var(--spacing);
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  min-width: 20rem;
+  padding: 0.5rem;
+  outline: none;
+}
+.btn:hover {
+  border: 2px solid var(--clr-primary-1);
+}
+.header1 {
+  margin-left: 1rem;
+  height: 3rem;
+  padding-top: 0.5rem;
+}
+
+/*
+==============================================================
+Navbar
+==============================================================
+*/
+
+.nav {
+  background: var(--clr-primary-2);
+  height: 3rem;
+  display: grid;
+  align-items: center;
+}
+.nav-links {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 1rem;
+  justify-self: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.nav-links a {
+  text-transform: capitalize;
+  color: var(--clr-primary-1);
+  font-weight: bold;
+  letter-spacing: var(--spacing);
+}
+.nav-links a:hover {
+  color: var(--clr-primary-1-light);
+}
+
+@media screen and (min-width: 800px) {
+  .nav-links {
+    column-gap: 3rem;
+    justify-self: end;
+    padding-right: 3rem;
+    margin: 0;
+  }
+}
+
+/*
+==============================================================
+Footer
+==============================================================
+*/
+
+.footer {
+  height: 3rem;
+  max-width: 100vw;
+  text-align: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas: "legaldisclosure";
+}
+#legaldisclosure {
+  grid-area: legaldisclosure;
+}
+.legal-links {
+  transition: var(--transition);
+  color: var(--clr-primary-1);
+  font-weight: bold;
+}
+.legal-links:hover {
+  color: var(--clr-primary-1-light);
+}
+
+/* =======================================================
+============================================================== 
+Book Recommendation
+==============================================================
+======================================================= */
+
+.main_recommendation {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3rem auto auto;
+  grid-template-areas:
+    "header1"
+    "main_book_div"
+    "books";
+  justify-items: center;
+  min-height: calc(100vh - 3rem);
+}
+.header1 {
+  grid-area: header1;
+}
+#main_book_div {
+  grid-area: main_book_div;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "main_book"
+    "main_text";
+  margin-bottom: 1rem;
+  align-content: flex-start;
+}
+#main_book {
+  grid-area: main_book;
+  height: 10rem;
+  width: auto;
+  padding: 0.5rem;
+  border: 1px solid;
+  border-color: var(--clr-primary-2);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+#main_text {
+  grid-area: main_text;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title_main"
+    "author_main";
+  justify-items: center;
+}
+.books {
+  grid-area: books;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "book_0_div book_1_div book_2_div"
+    "alias-submit alias-submit alias-submit";
+  justify-items: center;
+}
+#alias-submit {
+  grid-area: alias-submit;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "alias send";
+  justify-self: center;
+  margin-top: 1rem;
+  max-height: 4rem;
+}
+.recommendation {
+  border: 2px solid transparent;
+  cursor: pointer;
+  height: 10rem;
+  width: 10rem;
+  background: transparent;
+  position: relative;
+  outline: none;
+  margin-bottom: 1rem;
+}
+.recommendation:hover {
+  border: 2px solid var(--clr-primary-1);
+}
+.recommendation img {
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.book_divs {
+  display: grid;
+  justify-items: center;
+  width: 30vw;
+  align-content: flex-start;
+}
+#alias {
+  grid-area: alias;
+  display: grid;
+  border: 2px solid var(--clr-primary-1);
+  cursor: text;
+  justify-self: center;
+  box-shadow: none;
+}
+#explanation_recommendation {
+  margin: 2rem;
+}
+
+/* =======================================================
+============================================================== 
+Model Scores
+==============================================================
+======================================================= */
+
+.main-scores {
+  min-height: calc(100vh - 7rem);
+}
+#table_score {
+  margin: 1rem;
+  table-layout: auto;
+}
+#btn7 {
+  margin-left: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* =======================================================
+============================================================== 
+Highscores
+==============================================================
+======================================================= */
+
+.main-highscores {
+  min-height: calc(100vh - 7rem);
+}
+#table_highscore {
+  margin: 1rem;
+  table-layout: auto;
+}
+th {
+  background-color: var(--clr-primary-2);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  padding: 0.5rem;
+  min-width: 10rem;
+}
+.list {
+  margin-left: 2rem;
+}
+#btn6 {
+  margin-left: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* =======================================================
+============================================================== 
+About Us
+==============================================================
+======================================================= */
+
+.main-about {
+  min-height: calc(100vh - 7rem);
+}
+
+/* =======================================================
+============================================================== 
+Download data
+==============================================================
+======================================================= */
+
+.main-download {
+  min-height: calc(100vh - 7rem);
+}
