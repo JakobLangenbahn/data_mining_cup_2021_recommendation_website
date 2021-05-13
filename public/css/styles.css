@@ -90,7 +90,6 @@ h4 {
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: var(--radius);
-  min-width: 20rem;
   padding: 0.5rem;
   outline: none;
 }
@@ -99,6 +98,7 @@ h4 {
 }
 .header1 {
   margin-left: 1rem;
+  margin-right: 1rem;
   height: 3rem;
   padding-top: 0.5rem;
 }
@@ -203,13 +203,13 @@ Book Recommendation
 }
 #main_book {
   grid-area: main_book;
-  height: 10rem;
+  height: 30vh;
   width: auto;
   padding: 0.5rem;
   border: 1px solid;
   border-color: var(--clr-primary-2);
   border-radius: var(--radius);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 #main_text {
   grid-area: main_text;
@@ -238,18 +238,17 @@ Book Recommendation
   grid-template-rows: auto;
   grid-template-areas: "alias send";
   justify-self: center;
-  margin-top: 1rem;
-  max-height: 4rem;
+  max-height: 3rem;
 }
 .recommendation {
   border: 2px solid transparent;
   cursor: pointer;
-  height: 10rem;
-  width: 10rem;
+  height: 25vh;
+  width: 15rem;
   background: transparent;
   position: relative;
   outline: none;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .recommendation:hover {
   border: 2px solid var(--clr-primary-1);
@@ -291,7 +290,7 @@ Model Scores
 ======================================================= */
 
 .main-scores {
-  min-height: calc(100vh - 7rem);
+  min-height: calc(100vh - 6rem);
 }
 #table_score {
   margin: 1rem;
@@ -310,7 +309,7 @@ Highscores
 ======================================================= */
 
 .main-highscores {
-  min-height: calc(100vh - 7rem);
+  min-height: calc(100vh - 6rem);
 }
 #table_highscore {
   margin: 1rem;
@@ -339,7 +338,18 @@ About Us
 ======================================================= */
 
 .main-about {
-  min-height: calc(100vh - 7rem);
+  min-height: calc(100vh - 6rem);
+}
+
+/* =======================================================
+============================================================== 
+Legal disclosure
+==============================================================
+======================================================= */
+
+.main-legal {
+  min-height: calc(100vh - 6rem);
+  margin: 1rem;
 }
 
 /* =======================================================
@@ -349,5 +359,5 @@ Download data
 ======================================================= */
 
 .main-download {
-  min-height: calc(100vh - 7rem);
+  min-height: calc(100vh - 6rem);
 }
