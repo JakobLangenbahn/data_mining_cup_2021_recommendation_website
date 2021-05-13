@@ -64,11 +64,11 @@
     <!-- page content-->
     <div class="main_recommendation">
       <h2 class="header1">
-        Which one of the books below would you recommend to someone who likes the first book?
+        Which one of the three books below would you recommend to someone who likes the first book?
       </h2>
       <!-- main book -->
       <div id="main_book_div">
-        <img id="main_book" src="images/load.svg">
+        <img id="main_book" src="images/example.jpeg">
         <div id="main_text">
           <p id="title_main"><b>Main Title</b></p>
           <p id="author_main">Main Author</p>
@@ -78,31 +78,31 @@
       <form class="books">
         <div id="book_0_div" class="book_divs">
           <button class="recommendation" id="book_0" onclick="add_label_path_0();" type="button"><img id="image_book_0"
-              src="images/load.svg"></button>
+              src="images/example.jpeg"></button>
           <p id="title_0"><b>Title 1</b></p>
           <p id="author_0">Author 1</p>
         </div>
         <div id="book_1_div" class="book_divs">
           <button class="recommendation" id="book_1" onclick="add_label_path_1();" type="button"><img id="image_book_1"
-              src="images/load.svg"></button>
+              src="images/example.jpeg"></button>
           <p id="title_1"><b>Title 2</b></p>
           <p id="author_0">Author 2</p>
         </div>
         <div id="book_2_div" class="book_divs">
           <button class="recommendation" id="book_2" onclick="add_label_path_2();" type="button"><img id="image_book_2"
-              src="images/load.svg"></button>
+              src="images/example.jpeg"></button>
           <p id="title_2"><b>Title 3</b></p>
           <p id="author_0">Author 3</p>
         </div>
         <span id="alias-submit">
-          <input class="form btn" id="alias" placeholder="Your Name or alias" type="text">
+          <input class="form btn" id="alias" placeholder="Your name or alias" type="text">
           <button id="send" class="btn" onclick="send_data();" type="button">Submit</button>
         </span>
       </form>
     </div>
 
     <!-- Explanation text -->
-    <p id="explanation_recommendation">How to use: </br> XXX </p>
+    <p id="explanation_recommendation"><b>How to use:</b> </br> Please look at the book shown above and select, based on the information displayed, which one of the three books shown below, you would be most likely to read, assuming that you liked the first book.<br>Before you start, enter your name to collect points for each label.<br>Don't forget to check your score in the Highscores table. :-)</p>
 
     <!-- footer -->
     <footer class="footer">
