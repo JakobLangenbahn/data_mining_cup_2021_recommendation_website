@@ -179,7 +179,7 @@ Book Recommendation
 .main_recommendation {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3rem auto auto;
+  grid-template-rows: 3rem 35vh auto;
   grid-template-areas:
     "header1"
     "main_book_div"
@@ -193,13 +193,11 @@ Book Recommendation
 #main_book_div {
   grid-area: main_book_div;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   grid-template-areas:
-    "main_book"
-    "main_text";
+    "main_book main_text";
   margin-bottom: 1rem;
-  align-content: flex-start;
 }
 #main_book {
   grid-area: main_book;
@@ -213,13 +211,13 @@ Book Recommendation
 }
 #main_text {
   grid-area: main_text;
+  max-height: 30vh;
+  width: auto;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "title_main"
-    "author_main";
-  justify-items: center;
+  margin: auto;
+  margin-left: 1rem;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 .books {
   grid-area: books;
