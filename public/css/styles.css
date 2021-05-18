@@ -199,7 +199,7 @@ Book Recommendation
     "main_book main_text";
   margin-bottom: 1rem;
 }
-#main_book {
+#book_image {
   grid-area: main_book;
   height: 30vh;
   width: auto;
@@ -275,6 +275,11 @@ Book Recommendation
   border: 2px solid var(--clr-primary-1);
   cursor: text;
   justify-self: center;
+  box-shadow: none;
+}
+#team {
+  border: 2px solid var(--clr-primary-1);
+  cursor: text;
   box-shadow: none;
 }
 #explanation_recommendation {

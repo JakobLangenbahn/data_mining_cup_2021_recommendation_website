@@ -12,7 +12,7 @@
     <title>Book Recommendation</title>
 
     <!-- import css -->
-    <link href="./css/styles.css" rel="stylesheet"/>
+    <link href="./css/styles.css" rel="stylesheet" />
 
     <!-- import fontawesome -->
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/644da155ca.js"></script>
@@ -24,94 +24,97 @@
 
 <body>
 
-<div class="overall-page">
+    <div class="overall-page">
 
-    <!-- navbar -->
-    <nav class="nav" id="nav">
-        <ul class="nav-links">
-            <li>
-                <a href="index.html" id="index-link">Book Recommendation</a>
-            </li>
-            <li>
-                <a href="scores.html" id="scores-link">Model Scores</a>
-            </li>
-            <li>
-                <a href="highscores.html" id="highscores-link">Highscores</a>
-            </li>
-            <li>
-                <a href="aboutUs.html" id="about-page-link">About</a>
-            </li>
-        </ul>
-    </nav>
+        <!-- navbar -->
+        <nav class="nav" id="nav">
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html" id="index-link">Book Recommendation</a>
+                </li>
+                <li>
+                    <a href="scores.html" id="scores-link">Model Scores</a>
+                </li>
+                <li>
+                    <a href="highscores.html" id="highscores-link">Highscores</a>
+                </li>
+                <li>
+                    <a href="aboutUs.html" id="about-page-link">About</a>
+                </li>
+            </ul>
+        </nav>
 
-    <!-- page content-->
-    <div class="main_recommendation">
-        <h2 class="header1">
-            Which one of the three books below would you recommend to someone who likes the first book?
-        </h2>
-        <!-- main book -->
-        <div id="main_book_div">
-            <img id="book_image" src="images/example.jpeg">
-            <div id="main_text">
-                <p id="book_title"><b>Main Title</b></p>
-                <p id="book_author">Main Author</p>
+        <!-- page content-->
+        <div class="main_recommendation">
+            <h2 class="header1">
+                Which one of the three books below would you recommend to someone who likes the first book?
+            </h2>
+            <!-- main book -->
+            <div id="main_book_div">
+                <img id="book_image" src="images/example.jpeg">
+                <div id="main_text">
+                    <p id="book_title"><b>Main Title</b></p>
+                    <p id="book_author">Main Author</p>
+                </div>
             </div>
+            <!-- recommendations -->
+            <form class="books">
+                <div class="book_divs" id="book_0_div">
+                    <button class="recommendation" id="book_0"
+                        onclick="choice_recommendation(choice = 'recommendation_0');" type="button"><img
+                            id="recommendation_0_image" src="images/example.jpeg"></button>
+                    <p id="recommendation_0_title"><b>Title 1</b></p>
+                    <p id="recommendation_0_author">Author 1</p>
+                </div>
+                <div class="book_divs" id="book_1_div">
+                    <button class="recommendation" id="book_1"
+                        onclick="choice_recommendation(choice = 'recommendation_1');" type="button"><img
+                            id="recommendation_1_image" src="images/example.jpeg"></button>
+                    <p id="recommendation_1_title"><b>Title 2</b></p>
+                    <p id="recommendation_1_author">Author 2</p>
+                </div>
+                <div class="book_divs" id="book_2_div">
+                    <button class="recommendation" id="book_2"
+                        onclick="choice_recommendation(choice = 'recommendation_2');" type="button"><img
+                            id="recommendation_2_image" src="images/example.jpeg"></button>
+                    <p id="recommendation_2_title"><b>Title 3</b></p>
+                    <p id="recommendation_2_author">Author 3</p>
+                </div>
+                <span id="alias-submit">
+                    <input class="form btn" id="alias" placeholder="Your alias" type="text" required>
+                    <input class="form btn" id="team" placeholder="Your team name" type="text" required>
+                </span>
+            </form>
         </div>
-        <!-- recommendations -->
-        <form class="books">
-            <div class="book_divs" id="book_0_div">
-                <button class="recommendation" id="book_0" onclick="choice_recommendation(choice = 'recommendation_0');"
-                        type="button"><img id="recommendation_0_image"
-                                           src="images/example.jpeg"></button>
-                <p id="recommendation_0_title"><b>Title 1</b></p>
-                <p id="recommendation_0_author">Author 1</p>
-            </div>
-            <div class="book_divs" id="book_1_div">
-                <button class="recommendation" id="book_1" onclick="choice_recommendation(choice = 'recommendation_1');"
-                        type="button"><img id="recommendation_1_image"
-                                           src="images/example.jpeg"></button>
-                <p id="recommendation_1_title"><b>Title 2</b></p>
-                <p id="recommendation_1_author">Author 2</p>
-            </div>
-            <div class="book_divs" id="book_2_div">
-                <button class="recommendation" id="book_2" onclick="choice_recommendation(choice = 'recommendation_2');"
-                        type="button"><img id="recommendation_2_image"
-                                           src="images/example.jpeg"></button>
-                <p id="recommendation_2_title"><b>Title 3</b></p>
-                <p id="recommendation_2_author">Author 3</p>
-            </div>
-            <span id="alias-submit">
-          <input class="form btn" id="alias" placeholder="Your alias" type="text" required>
-          <input class="form btn" id="team" placeholder="Your team name" type="text" required>
-        </span>
-        </form>
+
+        <!-- Explanation text -->
+        <p id="explanation_recommendation"><b>How to use:</b> </br> Please look at the book shown above and select,
+            based on
+            the information displayed, which one of the three books shown below, you would be most likely to read,
+            assuming
+            that you liked the first book.<br>Before you start, enter your name to collect points for each
+            label.<br>Don't
+            forget to check your score in the Highscores table. :-)</p>
+
+        <!-- footer -->
+        <footer class="footer">
+            <!-- Legal Links -->
+            <a class="legal-links" href="Legal-Disclosure.html" id="legaldisclosure">Legal Disclosure</a>
+        </footer>
+
     </div>
 
-    <!-- Explanation text -->
-    <p id="explanation_recommendation"><b>How to use:</b> </br> Please look at the book shown above and select, based on
-        the information displayed, which one of the three books shown below, you would be most likely to read, assuming
-        that you liked the first book.<br>Before you start, enter your name to collect points for each label.<br>Don't
-        forget to check your score in the Highscores table. :-)</p>
+    <script src="/__/firebase/8.2.10/firebase-app.js"></script>
 
-    <!-- footer -->
-    <footer class="footer">
-        <!-- Legal Links -->
-        <a class="legal-links" href="Legal-Disclosure.html" id="legaldisclosure">Legal Disclosure</a>
-    </footer>
+    <!-- Add SDKs for Firebase products -->
+    <script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
+    <script src="/__/firebase/8.2.10/firebase-storage.js"></script>
+    <script src="/__/firebase/8.2.10/firebase-firestore.js"></script>
 
-</div>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 
-<script src="/__/firebase/8.2.10/firebase-app.js"></script>
-
-<!-- Add SDKs for Firebase products -->
-<script src="/__/firebase/8.3.1/firebase-analytics.js"></script>
-<script src="/__/firebase/8.2.10/firebase-storage.js"></script>
-<script src="/__/firebase/8.2.10/firebase-firestore.js"></script>
-
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
-
-<script src="./js/index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
