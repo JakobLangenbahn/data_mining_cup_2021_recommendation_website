@@ -295,7 +295,7 @@ Model Scores
 .main-scores {
   min-height: calc(100vh - 6rem);
 }
-#table_score {
+#table_scores {
   margin: 1rem;
   table-layout: auto;
 }
@@ -314,7 +314,7 @@ Highscores
 .main-highscores {
   min-height: calc(100vh - 6rem);
 }
-#table_highscore {
+#table_highscores {
   margin: 1rem;
   table-layout: auto;
 }
