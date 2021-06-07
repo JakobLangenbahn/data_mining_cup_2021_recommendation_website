@@ -37,12 +37,11 @@ db.collection("model_scores").orderBy("score", "desc").get().then((snapshot) => 
         let model_chosen = doc.data().chosen;
         let model_appearances = doc.data().appearances;
         let model_score = (model_chosen / model_appearances);
-        let team = doc.data().team;
-        let name = doc.data().name;
+        let team = doc.data().team_id;
         let model_id = doc.data().id;
         const storyRef = db.collection('model_scores').doc(model_id);
         storyRef.set({score: model_score},{merge: true});
-        renderAccount(doc, model_chosen, model_appearances, model_score, team, name);
+        renderAccount(doc, model_chosen, model_appearances, model_score, team, model_id);
     })
 })
 
