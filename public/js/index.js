@@ -239,7 +239,7 @@ let evaluation_array = [12,45274,10104,41371,14015,28515,70766,1822,56794,60188,
 let n_book;
 let book_selected;
 let book_id;
-let models = ["first", "model_1", "model_2"];
+let models = ["first", "model_2", "team404_base_model", "teamfivemodel", "Hybrid_MeanAllClassifiers"];
 let n_models;
 let models_selected;
 let rank_array = ["0", "1","2","3","4"];
