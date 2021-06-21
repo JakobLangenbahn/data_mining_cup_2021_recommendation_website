@@ -239,7 +239,7 @@ let evaluation_array = [12,45274,10104,41371,14015,28515,70766,1822,56794,60188,
 let n_book;
 let book_selected;
 let book_id;
-let models = ["first", "model_2", "team404_base_model", "teamfivemodel", "Hybrid_MeanAllClassifiers","lw_bpe_graph", "content-based_RS"];
+let models = ["rule_based", "third", "classifier", "hybrid_learned_weights", "intra_bpe_hybrid"];
 let n_models;
 let models_selected;
 let rank_array = ["0", "1","2","3","4"];
