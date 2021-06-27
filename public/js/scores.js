@@ -3,9 +3,12 @@ const db = firebase.firestore();
 
 
 /* Display the imported data in a high score table */
-const accountList = document.querySelector("#table_scores");
+const accountList_round_1 = document.querySelector("#table_scores_round_1");
+const accountList_round_2 = document.querySelector("#table_scores_round_2");
+const accountList_round_3 = document.querySelector("#table_scores_round_3");
 
-function renderAccount(doc, model_chosen, model_appearances, model_score, team, name) {
+
+function renderAccount(doc, model_chosen, model_appearances, model_score, team, name, accountList) {
     let tr = document.createElement("tr");
     let td_team = document.createElement("td");
     let td_name = document.createElement("td");
@@ -30,9 +33,7 @@ function renderAccount(doc, model_chosen, model_appearances, model_score, team, 
 }
 
 
-// Einfahc alles in eine Query
-
-db.collection("model_scores").orderBy("score", "desc").get().then((snapshot) => {
+db.collection("model_scores").where("round", "==", "first").orderBy("score", "desc").get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         let model_chosen = doc.data().chosen;
         let model_appearances = doc.data().appearances;
@@ -40,8 +41,34 @@ db.collection("model_scores").orderBy("score", "desc").get().then((snapshot) => 
         let team = doc.data().team_id;
         let model_id = doc.data().id;
         const storyRef = db.collection('model_scores').doc(model_id);
-        storyRef.set({score: model_score},{merge: true});
-        renderAccount(doc, model_chosen, model_appearances, model_score, team, model_id);
+        storyRef.set({score: model_score}, {merge: true});
+        renderAccount(doc, model_chosen, model_appearances, model_score, team, model_id, accountList_round_1);
+    })
+})
+
+db.collection("model_scores").where("round", "==", "second").orderBy("score", "desc").get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+        let model_chosen = doc.data().chosen;
+        let model_appearances = doc.data().appearances;
+        let model_score = (model_chosen / model_appearances);
+        let team = doc.data().team_id;
+        let model_id = doc.data().id;
+        const storyRef = db.collection('model_scores').doc(model_id);
+        storyRef.set({score: model_score}, {merge: true});
+        renderAccount(doc, model_chosen, model_appearances, model_score, team, model_id, accountList_round_2);
+    })
+})
+
+db.collection("model_scores").where("round", "==", "third").orderBy("score", "desc").get().then((snapshot) => {
+    snapshot.docs.forEach(doc => {
+        let model_chosen = doc.data().chosen;
+        let model_appearances = doc.data().appearances;
+        let model_score = (model_chosen / model_appearances);
+        let team = doc.data().team_id;
+        let model_id = doc.data().id;
+        const storyRef = db.collection('model_scores').doc(model_id);
+        storyRef.set({score: model_score}, {merge: true});
+        renderAccount(doc, model_chosen, model_appearances, model_score, team, model_id, accountList_round_3);
     })
 })
 
